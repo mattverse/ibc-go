@@ -174,7 +174,7 @@ func (suite *TypesTestSuite) SetupWasmGrandpaWithChannel() {
 	suite.Require().True(ok)
 
 	clientState := exportedClientState.(*types.ClientState)
-	clientState.CodeHash = suite.codeHash
+	clientState.Checksum = suite.codeHash
 	suite.chainA.App.GetIBCKeeper().ClientKeeper.SetClientState(suite.chainA.GetContext(), defaultWasmClientID, clientState)
 }
 
